@@ -1,7 +1,7 @@
 def call(){
   sh 'docker ps'
-  sh 'docker build -t ritwik72/sample:latest .'
-  sh 'echo $docker_credentials_PSW | docker login -u $docker_credentials_USR --password-stdin'
-  sh 'docker push ritwik72/sample:latest'
+  sh 'docker build -t $docker_ credentials_USR/sample:latest .'
+  sh 'docker login -u $docker_credentials_USR -p $docker_credentials_PSW'
+  sh 'docker push $docker_credentials_USR/sample:latest'
 }  
 
