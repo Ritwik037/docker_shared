@@ -1,7 +1,7 @@
-def call(){
-  sh 'docker build -t $docker_credentials_USR/sample:$BUILD_NUMBER .'
-  sh 'docker login -u $docker_credentials_USR -p $docker_credentials_PSW'
-  sh 'docker push $docker_credentials_USR/sample:$BUILD_NUMBER'
+def call(variable){
+  sh 'docker build -t ${variable}_USR/sample:$BUILD_NUMBER .'
+  sh 'docker login -u ${variable}_USR -p ${variable}_PSW'
+  sh 'docker push ${variable}_USR/sample:$BUILD_NUMBER'
   sh 'docker logout'
 
 }  
